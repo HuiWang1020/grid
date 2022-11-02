@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Cell from "./components/Cell";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const [count, setCount] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="grid">
+      Count: {count}
+      <div></div>
+      <Cell name="cell1" count={count} setCount={setCount} />
+      <Cell name="cell2" count={count} setCount={setCount} />
+      <Cell name="cell3" count={count} setCount={setCount} />
+      <Cell name="cell4" count={count} setCount={setCount} />
     </div>
   );
 }
-
-export default App;
